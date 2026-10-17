@@ -31,8 +31,12 @@ jobs:
           fi
           grep -q 'Effective date:' privacy/index.html
           grep -q 'Effective date:' terms/index.html
-          grep -q 'external media retrieval service' privacy/index.html
-          grep -q 'We therefore cannot state a retention period' privacy/index.html
+          if grep -qi 'pending verification' privacy/index.html terms/index.html; then
+            echo 'Legal verification remains pending.' >&2
+            exit 1
+          fi
+          grep -q 'Media and device access' privacy/index.html
+          grep -q 'Deletion and Clear Data' privacy/index.html
           grep -q 'mohamed.elsamman.dev@gmail.com' contact/index.html
       - name: Configure Pages
         uses: actions/configure-pages@v5
