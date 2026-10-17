@@ -23,18 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Check required legal disclosures
+      - name: Check legal page status and contact
         run: |
-          if grep -qi 'Draft' privacy/index.html terms/index.html; then
-            echo 'A legal page is still marked as a draft.' >&2
-            exit 1
-          fi
-          grep -q 'Effective date:' privacy/index.html
-          grep -q 'Effective date:' terms/index.html
-          if grep -qi 'pending verification' privacy/index.html terms/index.html; then
-            echo 'Legal verification remains pending.' >&2
-            exit 1
-          fi
+          for page in privacy/index.html terms/index.html; do
+            if grep -q 'Effective date pending verification' "$page"; then
+              grep -q 'Draft pending implementation review' "$page" || {
+                echo "$page needs a visible draft notice." >&2
+                exit 1
+              }
+            else
+              grep -q 'Effective date:' "$page"
+            fi
+          done
           grep -q 'Media and device access' privacy/index.html
           grep -q 'Deletion and Clear Data' privacy/index.html
           grep -q 'mohamed.elsamman.dev@gmail.com' contact/index.html

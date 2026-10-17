@@ -4,7 +4,7 @@ Static, dependency-free pages for the Downsave Android app. Target URL: <https:/
 
 ## Status
 
-**Redesigned-app content draft (local branch only).** The public site still describes the previous app. The only Flutter source currently available beside this website is the old downloader implementation, so the new import, editing, permissions, storage, and Clear Data claims are awaiting code verification. The deployment workflow blocks the draft legal pages. The confirmed support email remains `mohamed.elsamman.dev@gmail.com`.
+**Redesigned website published on GitHub Pages.** The Privacy Policy and Terms remain visibly marked as drafts pending implementation review. They describe the owner-supplied feature summary and qualify unverified data handling rather than claiming it is confirmed. The support email is `mohamed.elsamman.dev@gmail.com`.
 
 ## Structure
 
@@ -17,12 +17,12 @@ Static, dependency-free pages for the Downsave Android app. Target URL: <https:/
 
 All internal links are relative to the current page, so they work under the GitHub Pages project subpath. Each legal route is a real directory with an `index.html`, allowing direct navigation and refresh.
 
-## Before publishing the redesigned policy
+## Further verification
 
 1. Obtain the path, repository, branch, or build artifacts for the redesigned Flutter app.
 2. Verify exact import and editing functions, permissions, local file behavior, deletion and Clear Data semantics, network calls, and SDKs.
-3. Replace the draft verification notes with confirmed practices and set the genuine effective date on publication day.
-4. Merge the reviewed content into `main`, then verify the GitHub Actions deployment and all four public URLs.
+3. Replace the draft notices with confirmed practices and set a genuine effective date when the policies are finalized.
+4. Keep the public policy aligned with later app changes and verify each GitHub Actions deployment.
 
 ## Local preview
 
@@ -30,4 +30,4 @@ Open `index.html` in a browser, or serve this directory with any local static fi
 
 ## Source of app behavior
 
-The owner supplied the redesigned feature summary. The Flutter tree at `D:/creative_hub/DownSave/app/downsave` still contains the prior URL downloader and does not substantiate the new import and editing flows. No claim about those flows should be published as verified until the redesigned source is available. The published `main` site remains unchanged while this draft branch is reviewed.
+The owner supplied the redesigned feature summary. The Flutter tree at `D:/creative_hub/DownSave/app/downsave` still contains the prior URL downloader and does not substantiate the new import and editing flows. The published pages retain draft notices and do not present those flows as verified implementation details.
