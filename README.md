@@ -4,7 +4,7 @@ Static, dependency-free pages for the Downsave Android app. Target URL: <https:/
 
 ## Status
 
-**Publication candidate.** The privacy page states the owner's confirmed data practices and explicitly discloses unknown infrastructure and provider practices without promising that they retain no data. The official support email is `mohamed.elsamman.dev@gmail.com`. Backend and provider retention still need confirmation for accurate Google Play Data Safety answers.
+**Live on GitHub Pages.** The privacy page states the owner's confirmed data practices and explicitly discloses unknown infrastructure and provider practices without promising that they retain no data. The official support email is `mohamed.elsamman.dev@gmail.com`. Backend and provider retention still need confirmation for accurate Google Play Data Safety answers.
 
 ## Structure
 
@@ -22,8 +22,8 @@ All internal links are relative to the current page, so they work under the GitH
 1. Confirm current access/error logs and IP-address handling, temporary processing or caches, provider URL and metadata retention or sharing, hosting-provider role, retention periods, and deletion mechanisms. Update the policy if the answers differ from its current disclosures.
 2. Reconcile confirmed practices with Google Play Data Safety, including whether provider processing counts as sharing. Do not claim a server-side deletion period until one is verified.
 3. Verify the support email is still correct. To change it, replace every occurrence of `mohamed.elsamman.dev@gmail.com` in the HTML pages.
-4. In repository **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**. Commits to `main` trigger the workflow and future redeployments.
-5. Check the Actions run and all four public URLs over HTTPS before adding them to the app or Play Console.
+4. Repository Settings > Pages > Build and deployment uses GitHub Actions. Commits to `main` trigger the deployment workflow.
+5. Recheck the Actions run and all four public URLs over HTTPS after future changes. Confirm the remaining data practices before submitting Google Play Data Safety answers.
 
 ## Local preview
 
