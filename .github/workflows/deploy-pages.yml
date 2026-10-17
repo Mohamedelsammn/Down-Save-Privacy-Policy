@@ -23,16 +23,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Refuse to publish legal drafts
+      - name: Check required legal disclosures
         run: |
-          if grep -qi 'Draft — backend details pending' privacy/index.html; then
-            echo 'Privacy policy still contains unverified backend claims; deployment is blocked.' >&2
+          if grep -qi 'Draft' privacy/index.html terms/index.html; then
+            echo 'A legal page is still marked as a draft.' >&2
             exit 1
           fi
-          if grep -qi 'Draft for review' terms/index.html; then
-            echo 'Terms are still marked as draft; deployment is blocked.' >&2
-            exit 1
-          fi
+          grep -q 'Effective date:' privacy/index.html
+          grep -q 'Effective date:' terms/index.html
+          grep -q 'external media retrieval service' privacy/index.html
+          grep -q 'We therefore cannot state a retention period' privacy/index.html
+          grep -q 'mohamed.elsamman.dev@gmail.com' contact/index.html
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Stage public files
